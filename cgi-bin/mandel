@@ -1,0 +1,36 @@
+#!/usr/bin/ijconsole
+
+echo 'Content-type: text/html'
+echo ''
+echo '<h1>Hello from jsoftware.com</h1>'
+
+echo 0 : 0
+<style>
+  div { display: flex }
+  span {
+    display: block;
+    width: 4px; height: 4px;
+  }
+</style>
+)
+
+size =: 100
+mandel =: 3 : '(2 > | (y + _&[`*: @.(2&>@:|))^:(i.20) y) i. 0'"0
+
+plane =: (j.i.size) + (size, size) $ i.size
+center =: (0.75 * size) j. (0.5 * size)
+scale =: % 0.35 * size
+
+cell =: verb define
+  hue =. ": 180 * y % 20
+  col =. 'hsl(',hue,',100%,50%)'
+  '<span style="background:',col,'"></span>'
+)
+
+row =: verb define
+  echo '<div>',(cell"0 y),'</div>'
+)
+
+row"1 mandel scale * plane - center
+
+exit ''
