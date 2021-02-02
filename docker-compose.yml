@@ -7,5 +7,3 @@ services:
       - ./cgi-bin:/var/www/localhost/cgi-bin
     ports:
       - "1234:80"
-    # I guess we need this for logging...?
-    tty: true
