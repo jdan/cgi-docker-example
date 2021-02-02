@@ -3,8 +3,7 @@ services:
   cgi:
     build: .
     volumes:
-      - ./index.html:/var/www/localhost/htdocs/index.html
-      - ./hello.py:/var/www/localhost/cgi-bin/hello.py
+      - ./hello:/var/www/localhost/cgi-bin/hello
       - ./lighttpd.conf:/etc/lighttpd/lighttpd.conf
     ports:
       - "1234:80"
